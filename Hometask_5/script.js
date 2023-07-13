@@ -1,6 +1,10 @@
-var num1 = parseInt(prompt("Enter 1st number: "));
-var num2 = parseInt(prompt("Enter 2nd number: "));
-var num3 = parseInt(prompt("Enter 3rd number: "));
+var num1 = prompt("Enter 1st number: ");
+var num2 = prompt("Enter 2nd number: ");
+var num3 = prompt("Enter 3rd number: ");
 
-var avr = (num1 + num2 + num3) / 3;
-alert(`Arithmetical mean of ${num1}, ${num2} and ${num3} is ${avr}.`);
+var avr = (parseFloat(num1) + parseFloat(num2) + parseFloat(num3)) / 3;
+if (avr == Math.round(avr)) {
+    alert(`Arithmetical mean of ${num1}, ${num2} and ${num3} is ${avr}.`);
+} else {
+    alert(`Arithmetical mean of ${num1}, ${num2} and ${num3} is ${avr.toFixed(5)}.`);
+}
