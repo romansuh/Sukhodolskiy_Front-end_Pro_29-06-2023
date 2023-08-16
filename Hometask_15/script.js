@@ -18,11 +18,6 @@ function generatePascalTriangle(rows) {
     }
 }
 
-
-function printPascalTriangle(triangle) {
-
-}
-
 const numberOfRows = 10;
 const pascalTriangle = generatePascalTriangle(numberOfRows);
 
