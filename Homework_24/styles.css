@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+label {
+    font-weight: bold;
+}
+
+#postId {
+    width: 50px;
+    margin-right: 10px;
+}
+
+#searchButton,
+#commentsButton {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#postContainer {
+    margin-top: 20px;
+}
+
+.post {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.comments {
+    margin-top: 20px;
+}
+
+.comment {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+#commentsButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
