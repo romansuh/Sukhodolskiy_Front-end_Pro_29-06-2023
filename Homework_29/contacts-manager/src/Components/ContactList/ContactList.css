@@ -1,0 +1,27 @@
+.add-contact-button, .delete-button {
+    padding: 5px 10px;
+    background-color: #004da4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 10%;
+}
+
+.contacts-table-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+
+.contacts-table {
+    border: 1px solid #000000;
+}
+
+.contact-container {
+    background-color: rgba(150, 196, 211, 0.99);
+    padding: 10px;
+    margin-bottom: 20px;
+}
