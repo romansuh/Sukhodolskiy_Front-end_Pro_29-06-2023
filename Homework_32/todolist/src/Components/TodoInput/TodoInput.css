@@ -1,0 +1,9 @@
+.add-todo-button {
+    padding: 5px 10px;
+    background-color: #004da4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 10%;
+}
