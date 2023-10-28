@@ -1,15 +1,16 @@
 import './TodoInput.css';
-import React, {useState} from "react";
-import {connect} from "react-redux";
-import {addTodo} from "../../actions";
+import React, {useState} from 'react';
+import {useDispatch} from 'react-redux';
+import {addTodo} from '../../store/reducers/todosSlice';
 
-const TodoInput = ({addTodo}) => {
-    const [todo, setTodo] = useState("");
+function TodoInput() {
+    const dispatch = useDispatch();
+    const [todo, setTodo] = useState('');
 
     const handleAddTodo = () => {
-        if (todo !== "") {
-            addTodo({text: todo, done: false});
-            setTodo("");
+        if (todo.trim() !== '') {
+            dispatch(addTodo({text: todo, done: false}));
+            setTodo('');
         }
     };
 
@@ -27,10 +28,7 @@ const TodoInput = ({addTodo}) => {
             </button>
         </>
     );
-};
+}
 
-const mapDispatchToProps = {
-    addTodo,
-};
+export default TodoInput;
 
-export default connect(null, mapDispatchToProps)(TodoInput);
