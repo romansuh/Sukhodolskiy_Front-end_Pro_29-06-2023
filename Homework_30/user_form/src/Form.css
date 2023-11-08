@@ -1,0 +1,26 @@
+.Form .field-label, .submit-button, div {
+    display: block;
+    max-width: 340px;
+    margin-bottom: 10px;
+}
+
+.field-label {
+    border-bottom: 1px #0a0c31 solid;
+}
+
+.submit-button {
+    padding: 5px 10px;
+    background-color: #004da4;
+    color: azure;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 10%;
+}
+
+.Form div {
+    margin: 5px;
+    padding-left: 5px;
+    background-color: darkgray;
+    color: #ad0f0f;
+}
