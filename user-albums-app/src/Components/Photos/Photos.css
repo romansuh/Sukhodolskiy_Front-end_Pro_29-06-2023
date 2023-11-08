@@ -1,0 +1,22 @@
+.photos-container {
+    padding-top: 40px;
+}
+
+.photos-container h2 {
+    padding: 10px;
+}
+
+.photos-container ul {
+    list-style-type: none;
+}
+
+.photos-container li {
+    display: block;
+    border-bottom: 1px #333 solid;
+    padding: 5px;
+    text-align: center;
+}
+
+.photos-container img {
+    border: 1px solid #333;
+}

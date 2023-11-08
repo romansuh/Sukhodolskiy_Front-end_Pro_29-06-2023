@@ -1,0 +1,32 @@
+.albums-container {
+    padding-top: 40px;
+}
+
+.albums-container h2 {
+    padding: 10px;
+}
+
+.albums-container ul {
+    list-style-type: none;
+}
+
+.albums-container li {
+    display: block;
+    border-bottom: 1px #333 solid;
+    padding: 5px;
+}
+
+.photos-btn {
+    display: block;
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 10%;
+}
+
+.photos-btn:hover {
+    background-color: #111;
+}
