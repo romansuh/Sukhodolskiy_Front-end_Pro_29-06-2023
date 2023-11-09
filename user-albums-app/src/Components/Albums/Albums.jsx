@@ -5,13 +5,13 @@ import './Albums.css';
 
 function Albums() {
     const location = useLocation();
-    const userId = new URLSearchParams(location.search).get('userId');
+    const userId = location.pathname.split('/')[2];
     const [albums, setAlbums] = useState([]);
 
     useEffect(() => {
         let apiUrl = 'https://jsonplaceholder.typicode.com/albums';
 
-        if (userId) {
+        if (userId !== "0") {
             apiUrl += `?userId=${userId}`;
         }
 
@@ -27,7 +27,7 @@ function Albums() {
                 {albums.map(album => (
                     <li key={album.id}>
                         {album.title}
-                        <Link to={`/photos?albumId=${album.id}`}>
+                        <Link to={`/users/${userId}/albums/${album.id}/photos`}>
                             <button className="photos-btn">Photos</button>
                         </Link>
                     </li>

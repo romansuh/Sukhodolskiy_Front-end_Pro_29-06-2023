@@ -27,3 +27,8 @@
 .navigation-bar a:hover {
     background-color: #111;
 }
+
+h2 {
+    padding-top: 50px;
+    padding-left: 10px;
+}

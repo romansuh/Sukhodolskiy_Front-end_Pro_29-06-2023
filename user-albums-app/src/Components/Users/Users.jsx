@@ -19,7 +19,7 @@ const Users = () => {
                 {users.map((user) => (
                     <li key={user.id}>
                         {user.name}
-                        <Link to={`/albums?userId=${user.id}`}>
+                        <Link to={`/users/${user.id}/albums`}>
                             <button className="albums-btn">Albums</button>
                         </Link>
                     </li>

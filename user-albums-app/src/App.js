@@ -12,8 +12,8 @@ function App() {
             <Routes>
                 <Route path="/" element={<Layout/>}>
                     <Route path="/users" element={<Users/>}/>
-                    <Route path="/albums" element={<Albums/>}/>
-                    <Route path="/photos" element={<Photos/>}/>
+                    <Route path="/users/:userId/albums" element={<Albums/>}/>
+                    <Route path="/users/:userId/albums/:albumId/photos" element={<Photos/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>

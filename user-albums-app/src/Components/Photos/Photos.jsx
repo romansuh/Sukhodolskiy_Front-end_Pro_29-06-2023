@@ -5,13 +5,13 @@ import './Photos.css';
 
 function Photos() {
     const location = useLocation();
-    const albumId = new URLSearchParams(location.search).get('albumId');
+    const albumId = location.pathname.split('/')[4];
     const [photos, setPhotos] = useState([]);
 
     useEffect(() => {
         let apiUrl = 'https://jsonplaceholder.typicode.com/photos';
 
-        if (albumId) {
+        if (albumId !== "0") {
             apiUrl += `?albumId=${albumId}`;
         }
 
