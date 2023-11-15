@@ -1,23 +1,19 @@
-export const validateRegistrationData = (values) => {
-    const errors = {};
+import * as Yup from 'yup';
 
-    if (!values.username) {
-        errors.username = 'Required';
-    }
+const loginValidationSchema = Yup.object().shape({
+    username: Yup
+        .string()
+        .required('Username is required'),
+    email: Yup
+        .string()
+        .email('Invalid email.')
+        .required('Email is required'),
+    password: Yup
+        .string()
+        .matches(
+            /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+            'Invalid password: Minimum eight characters, at least one letter and one number.')
+        .required('Password is required'),
+});
 
-    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-        errors.email = 'Invalid email address';
-    }
-
-    if (!values.password) {
-        errors.password = 'Required';
-    }
-
-    if (!values.confirmPassword) {
-        errors.confirmPassword = 'Required';
-    } else if (values.confirmPassword !== values.password) {
-        errors.confirmPassword = 'Passwords do not match';
-    }
-
-    return errors;
-}
+export default loginValidationSchema;

@@ -1,11 +1,14 @@
-export const sumbitRegistrationData = (values, navigate) => {
+export const submitRegistrationData = (values, navigate) => {
     const user = {
         email: values.email,
         username: values.name,
         password: values.password,
     };
 
-    if (values.existingUser) {
+    if (localStorage.getItem(user.email) === null) {
+        localStorage.setItem(values.email, JSON.stringify(user));
+        alert('Sign up successful!');
+    } else {
         const storedUser = localStorage.getItem(values.email);
         if (storedUser) {
             const storedUserData = JSON.parse(storedUser);
@@ -17,9 +20,7 @@ export const sumbitRegistrationData = (values, navigate) => {
         } else {
             alert('User not found. Please sign up.');
         }
-    } else {
-        localStorage.setItem(values.email, JSON.stringify(user));
-        alert('Sign up successful!');
-        navigate('/empty-page');
     }
+
+    navigate('/welcome');
 }
