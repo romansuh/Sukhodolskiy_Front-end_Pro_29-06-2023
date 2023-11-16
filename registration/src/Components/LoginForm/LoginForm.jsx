@@ -3,7 +3,7 @@ import {useFormik} from 'formik';
 import {useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import {Button, TextField, Typography} from '@mui/material';
-import {loginUser} from '../../store/reducers/userSlice';
+import {signInUser, signUpUser} from '../../store/reducers/userSlice';
 import {submitRegistrationData} from '../../submitting/submitRegistrationData';
 import loginValidationSchema from "../../validation/validateRegistrationData";
 
@@ -19,8 +19,7 @@ const LoginForm = () => {
         },
         validationSchema: loginValidationSchema,
         onSubmit: (values) => {
-            dispatch(loginUser(values));
-            submitRegistrationData(values, navigate);
+            submitRegistrationData(values, dispatch, signUpUser, signInUser, navigate);
         },
     });
 
