@@ -4,7 +4,7 @@ import {useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import {Button, TextField, Typography, Container} from '@mui/material';
 import {signUpUser} from '../../store/reducers/userSlice';
-import {submitSignUpFormData} from '../../submitting/submitSignInFormData';
+import {submitSignUpFormData} from '../../submitting/submitRegistrationFormData';
 import {signUpValidationSchema} from "../../validation/validateLoginData";
 
 const SignUpForm = ({initialEmail}) => {
