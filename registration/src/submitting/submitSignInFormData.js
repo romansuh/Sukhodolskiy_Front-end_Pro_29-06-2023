@@ -1,15 +1,11 @@
-export const submitRegistrationData = (values, dispatch, signUpUser, signInUser, navigate) => {
+export const submitSignInFormData = (values, dispatch, signInUser, navigate) => {
     const user = {
         email: values.email,
         username: values.name,
         password: values.password,
     };
 
-    if (localStorage.getItem(user.email) === null) {
-        dispatch(signUpUser(user));
-        alert('Sign up successful!');
-        navigate('/welcome')
-    } else {
+    if (localStorage.getItem(user.email) !== null) {
         const storedUser = localStorage.getItem(values.email);
         if (storedUser) {
             const storedUserData = JSON.parse(storedUser);
@@ -20,9 +16,20 @@ export const submitRegistrationData = (values, dispatch, signUpUser, signInUser,
             } else {
                 alert('Incorrect password. Please try again.');
             }
-        } else {
-            alert('User not found. Please sign up.');
         }
-
+    } else {
+        if (window.confirm('User not found. Do you want to sign up?')) navigate('/signup');
     }
+}
+
+export const submitSignUpFormData = (values, dispatch, signUpUser, navigate) => {
+    const user = {
+        email: values.email,
+        username: values.name,
+        password: values.password,
+    };
+
+    dispatch(signUpUser(user));
+    alert('Sign up successful!');
+    navigate('/welcome');
 }

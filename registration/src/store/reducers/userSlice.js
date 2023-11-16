@@ -23,7 +23,7 @@ export const userSlice = createSlice({
             state.isSignedIn = true;
 
             const storedUserStorageData = JSON.parse(localStorage.getItem(state.email));
-            storedUserStorageData.isSignedIn = true;
+            // storedUserStorageData.isSignedIn = true;
 
             localStorage.setItem(state.email, JSON.stringify(storedUserStorageData));
         },

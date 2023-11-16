@@ -3,23 +3,22 @@ import {useFormik} from 'formik';
 import {useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import {Button, TextField, Typography, Container} from '@mui/material';
-import {signInUser, signUpUser} from '../../store/reducers/userSlice';
-import {submitRegistrationData} from '../../submitting/submitRegistrationData';
-import loginValidationSchema from "../../validation/validateRegistrationData";
+import {signInUser} from '../../store/reducers/userSlice';
+import {submitSignInFormData} from '../../submitting/submitSignInFormData';
+import {signInValidationSchema} from "../../validation/validateLoginData";
 
-const LoginForm = () => {
+const SignInForm = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const formik = useFormik({
         initialValues: {
-            username: '',
             email: '',
             password: '',
         },
-        validationSchema: loginValidationSchema,
+        validationSchema: signInValidationSchema,
         onSubmit: (values) => {
-            submitRegistrationData(values, dispatch, signUpUser, signInUser, navigate);
+            submitSignInFormData(values, dispatch, signInUser, navigate);
         },
     });
 
@@ -27,20 +26,8 @@ const LoginForm = () => {
         <Container>
             <form onSubmit={formik.handleSubmit}>
                 <Typography variant="h4" gutterBottom>
-                    Login
+                    Sign In
                 </Typography>
-                <TextField
-                    fullWidth
-                    id="username"
-                    name="username"
-                    label="Username"
-                    value={formik.values.username}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    error={formik.touched.username && Boolean(formik.errors.username)}
-                    helperText={formik.touched.email && formik.errors.username}
-                    margin="normal"
-                />
                 <TextField
                     fullWidth
                     id="email"
@@ -68,7 +55,7 @@ const LoginForm = () => {
                     margin="normal"
                 />
                 <Button type="submit" variant="contained" color="primary">
-                    Sign up
+                    SIGN IN
                 </Button>
             </form>
 
@@ -76,4 +63,4 @@ const LoginForm = () => {
     );
 };
 
-export default LoginForm;
+export default SignInForm;
