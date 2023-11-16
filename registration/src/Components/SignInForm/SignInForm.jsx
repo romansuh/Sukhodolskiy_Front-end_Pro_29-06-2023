@@ -4,7 +4,7 @@ import {useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import {Button, TextField, Typography, Container} from '@mui/material';
 import {signInUser} from '../../store/reducers/userSlice';
-import {submitSignInFormData} from '../../submitting/submitSignInFormData';
+import {submitSignInFormData} from '../../submitting/submitRegistrationFormData';
 import {signInValidationSchema} from "../../validation/validateLoginData";
 
 const SignInForm = () => {
